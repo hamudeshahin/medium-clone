@@ -24,3 +24,7 @@
 
 # Typescript
 *.tsbuildinfo
+
+
+sanity.config.ts
+sanity.cli.ts
