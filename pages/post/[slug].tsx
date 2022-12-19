@@ -4,13 +4,13 @@
  *
  **/
 
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Header from "../../components/header";
 import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typings";
 import PortableText from "react-portable-text";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useState } from "react";
+import { FC, useState } from "react";
 import Head from "next/head";
 
 interface IFormInput {
@@ -25,7 +25,7 @@ interface Props {
   post: Post;
 }
 
-function PostDetailPage({ post }: Props) {
+const PostDetailPage: FC<Props> = ({ post }) => {
   const [loading, setLoading] = useState<Boolean>(false);
   const [submitted, setSubmitted] = useState<Boolean>(false);
 
@@ -200,7 +200,7 @@ function PostDetailPage({ post }: Props) {
       </div>
     </main>
   );
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const query = `
