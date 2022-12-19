@@ -3,10 +3,7 @@ export interface Post {
   _id: string;
   _createdAt: string;
   title: string;
-  author: {
-    name: string;
-    image: string;
-  };
+  author: Author;
   description: string;
   mainImage: {
     asset: {
@@ -34,4 +31,16 @@ export interface Comment {
   _rev: string;
   _type: string;
   _updatedAt: string;
+}
+
+export interface Author {
+  _createdAt: string;
+  name: string;
+  bio: object[];
+  _id: string;
+  slug: {
+    current: string;
+  };
+  image: string;
+  posts?: [Post];
 }

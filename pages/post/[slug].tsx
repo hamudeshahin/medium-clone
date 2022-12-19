@@ -12,6 +12,7 @@ import PortableText from "react-portable-text";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FC, useState } from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 interface IFormInput {
   // the ? means that the field is not required
@@ -84,8 +85,11 @@ const PostDetailPage: FC<Props> = ({ post }) => {
             alt=""
           />
           <p className="font-extralight text-sm">
-            blog by <span className="text-green-600">{post.author.name}</span> -
-            Published at {new Date(post._createdAt).toLocaleString()}
+            blog by{" "}
+            <Link href={`/author/${post.author.slug.current}`}>
+              <span className="text-green-600">{post.author.name}</span>
+            </Link>{" "}
+            - Published at {new Date(post._createdAt).toLocaleString()}
           </p>
         </div>
         <div className="mt-10">
@@ -242,7 +246,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             title,
             author -> {
                 name,
-                image
+                image,
+                slug
             },
             'comments': *[
                 _type == "comment" &&
