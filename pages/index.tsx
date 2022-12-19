@@ -9,7 +9,7 @@ interface Props {
   posts: [Post];
 }
 
-const Home: NextPage = ({ posts }: Props) => {
+const Home: NextPage<Props> = ({ posts }) => {
   console.log(posts);
 
   return (
