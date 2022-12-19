@@ -29,6 +29,9 @@ const PostDetailPage: FC<Props> = ({ post }) => {
   const [loading, setLoading] = useState<Boolean>(false);
   const [submitted, setSubmitted] = useState<Boolean>(false);
 
+  console.log("post");
+  console.log(post);
+
   const {
     register,
     handleSubmit,
@@ -106,6 +109,13 @@ const PostDetailPage: FC<Props> = ({ post }) => {
                   <a href={href} className="text-blue-500 hover:underline">
                     {children}
                   </a>
+                );
+              },
+              blockquote: ({ children }: any) => {
+                return (
+                  <div className="p-5 bg-yellow-400 bg-opacity-40 overflow-x-auto rounded-md">
+                    {children}
+                  </div>
                 );
               },
             }}
