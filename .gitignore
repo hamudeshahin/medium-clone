@@ -4,6 +4,12 @@
 /node_modules
 /.pnp
 .pnp.js
+.env
+
+
+sanity-app/node_modules
+sanity-app/dist
+sanity-app/sanity.config.ts
 
 # testing
 /coverage
