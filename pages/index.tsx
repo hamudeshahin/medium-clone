@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Header from "../components/header";
 import { sanityClient, urlFor } from "../sanity";
+
 import { Post } from "../typings";
 
 interface Props {
