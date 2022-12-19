@@ -26,5 +26,5 @@
 *.tsbuildinfo
 
 
-sanity.config.ts
-sanity.cli.ts
+/sanity.config.ts
+/sanity.cli.ts
